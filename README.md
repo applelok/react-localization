@@ -11,7 +11,7 @@ Run `npm start` to view the demo
 
 ## Demo
 
-<Image>
+![Demo image](https://raw.githubusercontent.com/applelok/react-localization/master/src/img/demo.gif)
 
 ## Highlights
 
@@ -36,7 +36,7 @@ const messages = {
 
 ```
 
-But in fact we can (also prefer to) define the keys and values each of the language folder (src/i18n) with object type, which will be more readable.
+But in fact we can (also prefer to) define the keys and values in each of the language folder (src/i18n) with object type, which will be more readable.
 
 ```javascript
 // src/i18n/en
@@ -59,6 +59,7 @@ export const student = {
 Using flat, we can flatten the keys in language object automatically, and convert into a correct format for react-intl
 
 ```javascript
+import flatten from "flat";
 
 const messages = {
   en: flatten(en),
@@ -69,7 +70,7 @@ const messages = {
 ### Centralizing the place for retrieving locale keys
 We can centralize the locale keys to avoid the typo.
 
-
+![locale keys centralized image](https://raw.githubusercontent.com/applelok/react-localization/master/src/img/locale_keys_centralized.png)
 
 
 ### Setting default language
