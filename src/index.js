@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import { IntlProvider, FormattedMessage } from "react-intl";
+import { IntlProvider } from "react-intl";
 import { Button } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import zh_tw from "./i18n/zh_tw";
 import jp from "./i18n/jp";
 import zh_sc from "./i18n/zh_sc";
 import flatten from "flat";
-import { localizationKeys } from "./i18n/keys";
 import en from "./i18n/en";
+import LocalizedMessage from "./components/LocalizedMessage";
 
 const messages = {
   en: flatten(en),
@@ -49,15 +49,7 @@ const Root = () => {
       </Button>
 
       <p>
-        <FormattedMessage
-          id={localizationKeys.student.name}
-          values={{ name: "Apple" }}
-        />
-        <br />
-        <FormattedMessage
-          id={localizationKeys.student.contact.phone}
-          values={{ phone: 12345678 }}
-        />
+        <LocalizedMessage />
       </p>
     </IntlProvider>
   );
