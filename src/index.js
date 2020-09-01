@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { IntlProvider } from "react-intl";
-import { Button } from "semantic-ui-react";
+import { Button, Divider } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import zh_tw from "./i18n/zh_tw";
 import jp from "./i18n/jp";
@@ -27,7 +27,7 @@ const Root = () => {
     // Merging english and current locale, avoid showing Text id if cannot look for the translate in locale file
     setMergedMessages(Object.assign({}, messages["en"], messages[locale]));
   }, [locale]);
-
+  console.log(flatten(en));
   return (
     <IntlProvider
       messages={mergedMessages}
@@ -47,7 +47,7 @@ const Root = () => {
       <Button color="blue" onClick={() => setLocale("ja-JP")}>
         Japanese
       </Button>
-
+      <Divider />
       <p>
         <LocalizedMessage />
       </p>

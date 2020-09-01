@@ -3,4 +3,14 @@ export const student = {
   contact: {
     phone: "電話番号: {phone}",
   },
+  projects: [
+    {
+      name: "カメラ",
+      desc: "写真",
+    },
+    {
+      name: "食べ物",
+      desc: "林檎",
+    },
+  ],
 };

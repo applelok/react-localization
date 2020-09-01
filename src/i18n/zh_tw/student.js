@@ -4,4 +4,14 @@ export const student = {
   contact: {
     phone: "電話: {phone}",
   },
+  projects: [
+    {
+      name: "拍攝",
+      desc: "照片",
+    },
+    {
+      name: "食物",
+      desc: "蘋果",
+    },
+  ],
 };
