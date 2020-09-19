@@ -84,6 +84,36 @@ export const student = {
   ],
 };
 
+// i18n/en/student.js
+export const student = {
+  projects: [
+    {
+      name: "Camera",
+      desc: "Photo",
+    },
+    {
+      name: "Foods",
+      desc: "Apple",
+    },
+  ],
+};
+
+// i18n/zh_tw/student.js
+export const student = {
+  projects: [
+    {
+      name: "拍攝",
+      desc: "照片",
+    },
+    {
+      name: "食物",
+      desc: "蘋果",
+    },
+  ],
+};
+
+```
+
 ```javascript
 {localizationKeys.student.projects.map((p, idx) => {
   return (
