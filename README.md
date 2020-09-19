@@ -67,6 +67,45 @@ const messages = {
 };
 ```
 
+### Supporting array in locale file
+By using flat, we can also setting our locale keys/ values in array format
+
+```javascript
+export const student = {
+  projects: [
+    {
+      name: "student.projects.0.name",
+      desc: "student.projects.0.desc",
+    },
+    {
+      name: "student.projects.1.name",
+      desc: "student.projects.1.desc",
+    },
+  ],
+};
+
+```javascript
+{localizationKeys.student.projects.map((p, idx) => {
+  return (
+    <ul>
+      <li>
+        <span>
+          {intl.formatMessage({
+            id: localizationKeys.student.projects[idx].name,
+          })}
+        </span>
+        {` (${intl.formatMessage({
+          id: localizationKeys.student.projects[idx].desc,
+        })})`}
+      </li>
+    </ul>
+  );
+})}
+```
+
+![array_locale](https://github.com/applelok/react-localization/blob/master/src/img/array_convert.gif)
+
+
 ### Centralizing the place for retrieving locale keys
 We can centralize the locale keys to avoid the typo.
 
